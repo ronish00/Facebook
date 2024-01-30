@@ -6,14 +6,14 @@ import RightBar from "../../component/rightbar/RightBar"
 
 const Home = () => {
   return (
-    <div>
+    <>
       <TopBar />
       <div className="homeContainer">
         <SideBar />
         <Feed />
         <RightBar />
       </div>
-    </div>
+    </>
   )
 }
 
