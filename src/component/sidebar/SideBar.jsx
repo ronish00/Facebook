@@ -1,3 +1,4 @@
+import Closefriend from "../closefriend/Closefriend";
 import "./sidebar.css";
 import {
   Bookmark,
@@ -10,6 +11,7 @@ import {
   RssFeed,
   Work,
 } from "@mui/icons-material";
+import { Users } from "../../dummyData";
 
 const SideBar = () => {
   const sidebarIcon = [
@@ -60,59 +62,6 @@ const SideBar = () => {
     },
   ];
 
-  const friendList = [
-    {
-      id: 1,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 2,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 3,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 4,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 5,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 6,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 7,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 8,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 9,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-    {
-      id: 10,
-      name: "John Doe",
-      img: "/assets/person/2.jpeg",
-    },
-  ];
-
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -127,12 +76,11 @@ const SideBar = () => {
         <button className="sidebarButton">Show More</button>
         <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
-          {friendList.map((friend) => (
-            <li key={friend.id} className="sidebarFriend">
-              <img src={friend.img} className="sidebarFriendImg" alt="" />
-              <span className="sidebarFriendName">{friend.name}</span>
-            </li>
-          ))}
+          {
+            Users.map( user => (
+              <Closefriend key={user.id} user={user} />
+            ))
+          }
         </ul>
       </div>
     </div>
